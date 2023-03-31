@@ -1,0 +1,109 @@
+@use 'colors';
+
+//Headings
+.hero,
+h2,
+h3,
+.h3-caps,
+h4 {
+    font-weight: 700;
+}
+
+h1,
+.hero {
+    font-size: 38px;
+    line-height: 46px;
+}
+
+.hero {
+    background: colors.$gradient-red-text ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 37px;
+    color: colors.$main;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 27px;
+    color: colors.$main;
+}
+
+.h3-caps {
+    font-size: 14px;
+    line-height: 17px;
+
+    letter-spacing: 1px;
+
+    color: colors.$main;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 20px;
+    color: colors.$main;
+}
+
+
+//Lists
+ul,
+ol {
+    font-size: 18px;
+
+    li {
+        list-style: none;
+        margin-left: 10px;
+    }
+}
+
+ul {
+    li {
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+
+            margin-right: 10px;
+
+            background-color: colors.$accent;
+        }
+    }
+}
+
+ol {
+    li {
+        &::before {
+            counter-increment: section;
+            content: counter(section) ".";
+
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            color: colors.$accent;
+
+            margin-right: 10px;
+        }
+    }
+}
+
+
+
+//Links
+a {
+    line-height: 20px;
+    text-decoration: none;
+    color: colors.$active-regular;
+
+    transition: .3s ease-in-out;
+}
+
+a:hover {
+    color: colors.$accent;
+}

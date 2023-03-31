@@ -1,0 +1,17 @@
+@use '../mixins/responsive';
+
+.margin-top {
+    margin-top: 200px;
+
+    @media screen and (max-width: 1005px) {
+        margin-top: 350px;
+    }
+
+    @include responsive.mobile {
+        margin-top: 165px;
+    }
+}
+
+.margin-top60 {
+    margin-top: 60px;
+}

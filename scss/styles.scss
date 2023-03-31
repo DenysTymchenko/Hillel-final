@@ -1,0 +1,47 @@
+//Abstracts
+@use './abstracts/fonts';
+@use './abstracts/colors';
+@use './abstracts/fonts-styles';
+
+//Pages
+@use './pages-styles/main-page';
+@use './pages-styles/about-us';
+@use './pages-styles/team';
+@use './pages-styles/team-member';
+@use './pages-styles/contact';
+@use './pages-styles/publications-page';
+@use './pages-styles/publication-entry';
+@use './pages-styles/services-page';
+@use './pages-styles/services-entry';
+
+//Blocks
+@use './blocks/header';
+@use './blocks/footer';
+@use './blocks/services-block';
+@use './blocks/publications-block';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    counter-reset: section;
+
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.bottom-underline {
+    width: 92%;
+
+    border: none;
+    border-bottom: 2px solid colors.$gray-separator;
+}

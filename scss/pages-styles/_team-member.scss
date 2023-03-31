@@ -1,0 +1,118 @@
+@use '../abstracts/colors';
+
+@use '../mixins/responsive';
+
+.team-member {
+    padding: 60px 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    &__img {
+        display: block;
+        max-width: 400px;
+        min-width: 300px;
+        height: 500px;
+
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: 12px;
+
+        &_tablet {
+            display: none;
+        }
+
+        @media screen and (max-width: 1092px) {
+            display: none;
+
+            &_tablet {
+                display: block;
+                max-width: 315px;
+                min-width: 300px;
+                height: 375px;
+
+                object-fit: cover;
+                object-position: center;
+
+                @include responsive.mobile {
+                    max-width: 84%;
+                }
+            }
+        }
+    }
+
+    &__info {
+        width: 57%;
+
+        @media screen and (max-width: 1092px) {
+            width: 84.3%;
+
+            .team-member__wrapper {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                padding-bottom: 30px;
+
+                @include responsive.mobile {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .team-member__main {
+            padding-bottom: 30px;
+
+            .team-member__name {
+                margin-bottom: 15px;
+            }
+
+            .team-member__other {
+                display: flex;
+                align-items: center;
+
+                @media screen and (max-width: 1092px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+
+            .team-member__position {
+                font-size: 14px;
+                line-height: 22px;
+                color: colors.$gray-text;
+            }
+
+            .team-member__info-separator {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: colors.$gray-separator;
+
+                margin: 0 10px;
+
+                @media screen and (max-width: 1092px) {
+                    display: none;
+                }
+            }
+        }
+
+        .team-member__cv {
+            border-top: 4px solid colors.$gray-separator;
+            padding-top: 30px;
+
+            .team-member__overview,
+            .team-member__education {
+                margin-bottom: 30px;
+            }
+
+            .team-member__education-heading,
+            .team-member__experience-heading {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

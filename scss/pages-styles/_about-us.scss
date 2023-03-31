@@ -1,0 +1,232 @@
+@use '../abstracts/colors';
+
+@use '../mixins/responsive';
+
+br {
+    margin-bottom: 20px;
+}
+
+.introduction,
+.quality {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    padding: 60px 0;
+
+    @include responsive.tablet {
+        flex-direction: column;
+    }
+
+}
+
+.introduction__description,
+.quality__p {
+    font-size: 19px;
+    line-height: 30px;
+}
+
+.introduction__overview,
+.quality__p {
+    width: 49%;
+
+    @include responsive.tablet {
+        width: 80%;
+    }
+}
+
+.introduction {
+    align-items: center;
+
+    .introduction__heading {
+        margin-bottom: 30px;
+    }
+
+    &__statistics {
+        width: 24.5%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        border-left: 4px solid colors.$gray-separator;
+
+        padding-left: 30px;
+
+        @include responsive.tablet {
+            width: 80%;
+        }
+
+        .introduction__wrapper {
+            display: flex;
+            gap: 8px;
+        }
+
+        &-description {
+            line-height: 20px;
+        }
+    }
+}
+
+
+
+.team-text {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url("../images/about-us/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+        font-weight: 700;
+        font-size: 96px;
+        line-height: 117px;
+        letter-spacing: 63px;
+        color: white;
+        opacity: 0.8;
+        text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.8);
+
+        @include responsive.tablet {
+            font-size: 46px;
+            line-height: 56px;
+            letter-spacing: 63px;
+        }
+
+        @include responsive.mobile {
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: 13px;
+        }
+    }
+}
+
+
+
+.quality {
+
+    @include responsive.tablet {
+        align-items: center;
+    }
+
+    &__heading {
+        width: 25.1%;
+
+        @include responsive.tablet {
+            width: 80%;
+        }
+    }
+}
+
+
+
+.achivements {
+    background-color: colors.$gray-bg;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    padding-top: 30px;
+
+    &__corousel {
+        width: 91.6%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        @include responsive.mobile {
+            width: 68%;
+        }
+
+        .achivements__cards {
+            width: 100%;
+
+            display: flex;
+            gap: 40px;
+
+            .achivements__card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 25%;
+                height: 110px;
+
+                background-color: white;
+
+                @include responsive.mobile {
+                    width: 100%;
+                }
+
+                &_mobile-none {
+                    @include responsive.mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            .achivements__card-img {
+                width: 100px;
+            }
+        }
+
+        &-btn {
+            width: 16px;
+            height: 16px;
+
+            border: none;
+            border-radius: 100%;
+
+            background-color: colors.$active-regular;
+            opacity: 0.2;
+
+            margin-right: 15px;
+
+            transition: .3s ease-in-out;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            @include responsive.mobile {
+                margin-right: 14px;
+
+                width: 10px;
+                height: 10px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &_current {
+                opacity: 1;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &_mobile {
+                display: none;
+
+                @include responsive.mobile {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
